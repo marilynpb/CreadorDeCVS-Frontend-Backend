@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="../css/contacto.css">
+<title>Contacto</title>
+
+<body>
+    
+    {{>navbar1}}
+
+    {{>alertas}}
+
+    <main>  
+        <div class="contacto"> 
+            <form action="/pages/sendEmail" method="post">  
+                <input type="hidden" name="_csrf" value="{{csrfToken}}"/>
+                <h2>Formulario de contacto</h2>
+                <p>Contestaremos lo antes posible para resolver tus dudas/problemas</p>
+                <label>Nombre</label>
+                <input type="text" maxlength="16" id="user_name" name="user_name" autofocus>
+                <label>Email</label>
+                <input type="email" maxlength="30" id="user_email" name="user_email">
+                <label>Asunto</label>
+                <input type="text" maxlength="30" id="user_asunto" name="user_asunto">
+                <label>Mensaje</label>
+                <textarea id="user_message" name="user_message"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div> 
+    </main>
+
+    {{>footer}}
+</body>
